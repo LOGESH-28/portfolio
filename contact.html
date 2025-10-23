@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Logesh S</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="contact-page-body">
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <canvas id="neural-bg"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <!-- Logo with Back Arrow -->
+            <a href="index.html" class="logo logo-with-arrow clickable">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="back-arrow-icon"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                 LogeshS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="vidhai.html" class="nav-link">Vidhai AI</a></li>
+                <li><a href="rotaract.html" class="nav-link">Rotaract</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger clickable">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content">
+                    <h1 class="contact-title">Get In Touch</h1>
+                    <p class="contact-subtitle">Have an exciting project or want to collaborate? Let's connect and create something amazing together.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT CONTENT -->
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-section">
+                        <h2>Send me a Message</h2>
+                        <!-- 
+                          UPDATED FORM ACTION HERE
+                        -->
+                        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xrbywwnv" method="POST">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary clickable">Send Message</button>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:llogesh28102004@gmail.com" class="clickable">llogesh28102004@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">📱</div>
+                             <div>
+                                <h3>Phone</h3>
+                                <p><a href="tel:+919791735569" class="clickable">+91 97917 35569</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">💼</div>
+                             <div>
+                                <h3>LinkedIn</h3>
+                                <p><a href="https://linkedin.com/in/logesh-s28" target="_blank" rel="noopener noreferrer" class="clickable">linkedin.com/in/logesh-s28</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">🐙</div>
+                             <div>
+                                <h3>GitHub</h3>
+                                <p><a href="https://github.com/LOGESH-28" target="_blank" rel="noopener noreferrer" class="clickable">github.com/LOGESH-28</a></p>
+                            </div>
+                        </div>
+                        
+                        <!-- ADDED INSTAGRAM LINK -->
+                         <div class="info-card">
+                             <div class="info-icon">📸</div>
+                             <div>
+                                 <h3>Instagram</h3>
+                                 <p><a href="https://www.instagram.com/logesh._.28?igsh=MTgwY2xtNnp2cHJsbg==" target="_blank" rel="noopener noreferrer" class="clickable">@logesh._.28</a></p>
+                             </div>
+                         </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">📍</div>
+                             <div>
+                                <h3>Location</h3>
+                                <p>Tiruppur, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="contact-footer"> <!-- Use specific footer class -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Portfolio Home</a></li>
+                        <li><a href="vidhai.html">Vidhai AI</a></li>
+                        <li><a href="rotaract.html">Rotaract</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://linkedin.com/in/logesh-s28" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/LOGESH-28" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                         <li><a href="https://www.instagram.com/logesh._.28?igsh=MTgwY2xtNnp2cHJsbg==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:llogesh28102004@gmail.com">Email</a></li>
+                        <li><a href="tel:+919791735569">Phone</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Logesh S. All rights reserved.</p>
+            </div>
+         </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Contact Form Submission Script -->
+    <script>
+        // Wait for the main.js DOMContentLoaded to finish, or just run this
+         document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const statusDiv = document.getElementById('form-status');
+            
+            if (form && statusDiv) {
+                async function handleSubmit(event) {
+                    event.preventDefault();
+                    statusDiv.textContent = 'Sending message...';
+                    statusDiv.className = 'form-status show'; // Show 'sending' message
+
+                    const data = new FormData(event.target);
+                    try {
+                        const response = await fetch(event.target.action, {
+                            method: form.method,
+                            body: data,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            statusDiv.textContent = 'Message sent successfully! I will get back to you soon.';
+                            statusDiv.className = 'form-status show success';
+                            form.reset();
+                            setTimeout(() => { statusDiv.className = 'form-status'; }, 4000); // Hide after 4s
+                        } else {
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    statusDiv.textContent = data["errors"].map(error => error["message"]).join(", ");
+                                } else {
+                                    statusDiv.textContent = 'Oops! There was a problem submitting your form.';
+                                }
+                                statusDiv.className = 'form-status show error';
+                                 setTimeout(() => { statusDiv.className = 'form-status'; }, 5000); // Hide after 5s
+                            });
+                        }
+                    } catch (error) {
+                        statusDiv.textContent = 'Oops! There was a network problem submitting your form.';
+                        statusDiv.className = 'form-status show error';
+                         setTimeout(() => { statusDiv.className = 'form-status'; }, 5000); // Hide after 5s
+                    }
+                }
+                form.addEventListener("submit", handleSubmit);
+            }
+         });
+    </script>
+</body>
+</html>
+

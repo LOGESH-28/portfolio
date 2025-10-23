@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhai AI - Community of Innovators</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="vidhai-page-body">
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <canvas id="neural-bg"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <!-- Logo with Back Arrow -->
+            <a href="index.html" class="logo logo-with-arrow clickable">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="back-arrow-icon"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                 LogeshS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="vidhai.html" class="nav-link active">Vidhai AI</a></li>
+                <li><a href="rotaract.html" class="nav-link">Rotaract</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger clickable">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="vidhai-hero">
+            <div class="container" style="text-align: center;">
+                 <!-- UPDATED: Larger Logo -->
+                 <img src="images/vidhai.png" alt="Vidhai AI Logo" style="width: 140px; height: 140px; margin-bottom: 1.5rem; background: rgba(255,255,255,0.8); border-radius: 50%; padding: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);" onerror="this.style.display='none'">
+                <h1 class="section-title" style="color: white; padding-bottom: 0; margin-bottom: 1rem;">Vidhai AI</h1>
+                <p style="font-size: 1.5rem; color: rgba(255,255,255,0.95); margin-bottom: 1rem;">விதை - Planting Seeds of Knowledge</p>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto;">
+                    Making AI accessible to every curious mind. A community where we learn by building and grow by sharing.
+                </p>
+            </div>
+        </section>
+
+        <section class="vidhai-section">
+            <div class="container">
+                <h2 class="section-title">Our Mission</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.1rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+                        <strong style="color: var(--success);">Vidhai AI</strong> is built on a simple yet powerful principle: the best way to learn is to build, and the best way to grow is to share.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-light); line-height: 1.8;">
+                        We believe that artificial intelligence shouldn't be confined to elite institutions. Everyone curious about AI deserves access to knowledge, mentorship, and hands-on experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="vidhai-section" style="background: var(--primary-light);">
+            <div class="container">
+                <h2 class="section-title">Our Pillars</h2>
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+                        <h3>Innovation</h3>
+                        <p>Building cutting-edge AI solutions that solve real-world problems and push boundaries.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                        <h3>Collaboration</h3>
+                        <p>Working together to create something greater than individual efforts.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                        <h3>Education</h3>
+                        <p>Making AI knowledge accessible to everyone regardless of background or experience.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🌱</div>
+                        <h3>Growth</h3>
+                        <p>Nurturing the next generation of AI professionals and innovators.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW KURAL SECTION -->
+        <section class="vidhai-principle">
+            <div class="container">
+                <h2 class="section-title">Our Guiding Principle</h2>
+                <div class="principle-content">
+                    <blockquote class="thirukkural">
+                        "கற்க கசடறக் கற்பவை கற்றபின்<br>
+                        நிற்க அதற்குத் தக."
+                        <cite>— திருக்குறள் 391</cite>
+                    </blockquote>
+                    <div class="kural-translation">
+                        <p>"Learn thoroughly what is to be learnt; after learning, let one's conduct be worthy of that learning."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END KURAL SECTION -->
+
+
+        <section class="vidhai-section">
+            <div class="container">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="offerings-grid">
+                    <div class="offering-card">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">🎓</div>
+                        <h3>Workshops & Training</h3>
+                        <p>Regular sessions on ML, Deep Learning, Computer Vision, and Generative AI led by experienced practitioners.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">💻</div>
+                        <h3>Project Collaboration</h3>
+                        <p>Work on real-world AI projects with mentorship and community support.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">👥</div>
+                        <h3>Mentorship</h3>
+                        <p>Get guidance from experienced AI practitioners and industry professionals.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">🌐</div>
+                        <h3>Networking</h3>
+                        <p>Connect with fellow AI enthusiasts and build lasting professional relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Join the Community</h2>
+                <p>Be part of a movement that's democratizing AI education and innovation.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary clickable">Get Involved</a>
+                    <a href="https://www.instagram.com/logesh._.28?igsh=MTgwY2xtNnp2cHJsbg==" target="_blank" rel="noopener noreferrer" class="btn btn-secondary clickable">Follow on Instagram</a>
+                    <a href="index.html" class="btn btn-secondary clickable">Back to Portfolio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="vidhai-footer">
+         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                     <h4>Initiative By</h4>
+                     <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                         AI & DS Dept. (Batch of 2026)<br>
+                         Kangeyam Institute of Technology
+                     </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Workshops</a></li>
+                        <li><a href="#">Projects</a></li>
+                         <li><a href="contact.html">Get In Touch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://linkedin.com/in/logesh-s28" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/LOGESH-28" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.instagram.com/logesh._.28?igsh=MTgwY2xtNnp2cHJsbg==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vidhai AI Initiative. All rights reserved.</p>
+            </div>
+         </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#" class="back-to-top clickable" aria-label="Back to top"> <!-- Use # for top -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
