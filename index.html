@@ -1,1177 +1,449 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logesh S — Applied AI Engineer</title>
+  <meta name="description" content="Logesh S — Applied AI Engineer and founder building production-grade RAG pipelines, on-device LLMs, computer vision systems and research-level deep learning architectures." />
+  <meta name="theme-color" content="#0f0f10" />
+  <script>document.documentElement.classList.add('js');</script>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>LOGESH S | AI Engineer Portfolio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@300;400;500;600&amp;family=Orbitron:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        :root {
-            --glass-bg: rgba(19, 19, 24, 0.6);
-            --glass-border: rgba(0, 212, 255, 0.2);
-        }
-        body {
-            background-color: #0a0a0f;
-            color: #e4e1e9;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-        }
-        .neon-text-cyan {
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
-        }
-        .neon-border-cyan:hover {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            border-color: #00d4ff;
-        }
-        /* Neural Grid CSS fallback + Animation */
-        .neural-grid {
-            background-image: 
-                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: grid-move 20s linear infinite;
-        }
-        @keyframes grid-move {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
-        }
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        .orbit-ring {
-            border: 2px dashed rgba(0, 212, 255, 0.3);
-            animation: rotate 15s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes pulse-soft {
-            0%, 100% { transform: scale(1); opacity: 1; filter: brightness(1); }
-            50% { transform: scale(1.02); opacity: 0.9; filter: brightness(1.2); }
-        }
-        .headline-pulse {
-            animation: pulse-soft 4s ease-in-out infinite;
-        }
-        @keyframes node-pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
-            70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(0, 212, 255, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
-        }
-        .timeline-node-pulse {
-            animation: node-pulse 2s infinite;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #00d4ff; border-radius: 10px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-
-        /* Reveal Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        .project-card.filtered-out {
-            display: none !important;
-        }
-    </style>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#a8e8ff",
-                        "on-primary": "#003642",
-                        "secondary": "#d1bcff",
-                        "background": "#131318",
-                        "surface-container": "#1f1f25",
-                        "outline-variant": "#3c494e",
-                        "on-surface-variant": "#bbc9cf"
-                    },
-                    fontFamily: {
-                        "headline-lg": ["Space Grotesk"],
-                        "headline-md": ["Space Grotesk"],
-                        "body-lg": ["Inter"],
-                        "label-md": ["JetBrains Mono"],
-                        "code-sm": ["JetBrains Mono"],
-                        "orbitron": ["Orbitron"]
-                    },
-                    spacing: {
-                        "gutter": "24px",
-                        "xl": "80px",
-                        "container-max": "1280px"
-                    }
-                }
-            }
-        }
-    </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="font-body-lg bg-background text-on-surface selection:bg-primary/30">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-[rgba(10,10,15,0.8)] backdrop-blur-xl border-b border-outline-variant/20">
-<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
-<div class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">
-            LOGESH.AI
+<body>
+
+  <!-- ── Preloader ─────────────────────────────────────────── -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__word">
+      <span>L</span><span>o</span><span>g</span><span>e</span><span>s</span><span>h</span>
+    </div>
+  </div>
+
+  <!-- ── Header ────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#home" class="logo" aria-label="Logesh S — home">
+        <span class="logo__mark"></span>Logesh<span class="logo__dot">.</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn--outline header-cta">Hire Me</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── Hero ──────────────────────────────────────────────── -->
+    <section id="home" class="hero">
+      <div class="hero__stripes" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="hero__hello hero__eyebrow">Hi, I'm <strong>Logesh S</strong></p>
+          <h1 class="hero__title" data-split="hero">Deep Learning &amp;<br />Machine Learning<br />Engineer</h1>
+          <p class="hero__lead">
+            I design, train and ship deep learning and machine learning systems — production RAG
+            pipelines, on-device LLMs and research-grade computer vision — from PyTorch prototypes
+            to Dockerised FastAPI services.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--lime">View Projects</a>
+            <a href="#" class="btn btn--ghost" data-link="resume" download>Download Résumé</a>
+          </div>
         </div>
-<nav class="hidden md:flex gap-8 font-label-md text-label-md uppercase tracking-wider">
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#skills">Stack</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#experience">NeuralLink</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">Archives</a>
-</nav>
-<a href="#contact" class="bg-primary text-on-primary px-6 py-2 font-label-md uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,212,255,0.5)] hover:scale-105 transition-all duration-300 inline-block text-center">
-            Connect
-        </a>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-<!-- Particles/Neural Background container -->
-<div class="absolute inset-0" id="particles-js"></div>
-<div class="absolute inset-0 neural-grid opacity-30 z-0"></div>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0f]/40 to-[#0a0a0f] z-0"></div>
-<div class="relative z-10 text-center px-gutter">
-<h1 class="font-orbitron text-display-lg text-5xl md:text-[120px] font-bold tracking-tighter text-white mb-4 neon-text-cyan headline-pulse">
-            LOGESH S
-        </h1>
-<div class="h-12">
-<p class="font-code-sm text-primary text-xl md:text-2xl typing-cursor uppercase tracking-[0.3em] font-medium" id="typing-text"></p>
-</div>
-<div class="mt-12 flex flex-col md:flex-row gap-6 justify-center">
-<a class="px-8 py-4 bg-primary text-on-primary font-bold uppercase tracking-widest hover:scale-105 transition-transform hover:shadow-[0_0_30px_rgba(0,212,255,0.6)]" href="#projects">
-                View Projects
-            </a>
-<a class="px-8 py-4 border border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary/10 transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.2)]" href="assets/docs/Logesh.S.pdf" download="Logesh_S_Resume.pdf">
-                Download Resume
-            </a>
-</div>
-</div>
-<div class="absolute bottom-10 animate-bounce z-10">
-<span class="material-symbols-outlined text-primary text-4xl">keyboard_double_arrow_down</span>
-</div>
-</section>
-<!-- About Section -->
-<section class="py-xl px-gutter max-w-container-max mx-auto reveal" id="about">
-<div class="grid md:grid-cols-2 gap-16 items-center">
-<div class="relative flex justify-center items-center">
-<!-- Animated Orbit Rings -->
-<div class="absolute w-64 h-64 md:w-80 md:h-80 orbit-ring rounded-full"></div>
-<div class="absolute w-72 h-72 md:w-96 md:h-96 orbit-ring rounded-full" style="animation-direction: reverse; animation-duration: 20s;"></div>
-<div class="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary/20 relative z-10 glass">
-<img alt="Logesh S Profile" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="assets/images/LOGESH.png"/>
-</div>
-</div>
-<div class="space-y-8">
-<h2 class="font-headline-lg text-4xl text-primary border-l-4 border-primary pl-6">NEURAL_PROFILE</h2>
-<p class="text-body-lg text-on-surface-variant leading-relaxed">
-                Fresher AI Engineer with hands-on experience building production-grade RAG pipelines, on-device LLMs, and computer vision systems. Proven ability to ship end-to-end AI applications using LangChain, LlamaIndex, FastAPI, and Docker. Interned at Infosys Springboard and Lavendel Consulting. Led a 100+ member technical association as President. Passionate about building real-world GenAI products at scale.
-            </p>
-<div class="grid grid-cols-2 gap-6">
-<div class="glass p-6 text-center group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,212,255,0.1)]">
-<span class="block font-headline-md text-primary neon-text-cyan text-3xl" data-count="3">0</span>
-<span class="text-label-md text-on-surface-variant uppercase">Internships</span>
-</div>
-<div class="glass p-6 text-center group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,212,255,0.1)]">
-<span class="block font-headline-md text-primary neon-text-cyan text-3xl" data-count="9">0</span>
-<span class="text-label-md text-on-surface-variant uppercase">Major Projects</span>
-</div>
-<div class="glass p-6 text-center group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,212,255,0.1)]">
-<span class="block font-headline-md text-primary neon-text-cyan text-3xl" data-count="100">0</span>
-<span class="text-label-md text-on-surface-variant uppercase">Members Managed</span>
-</div>
-<div class="glass p-6 text-center group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,212,255,0.1)]">
-<span class="block font-headline-md text-primary neon-text-cyan text-3xl" data-count="8.43">0</span>
-<span class="text-label-md text-on-surface-variant uppercase">Current CGPA</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Skills Section -->
-<section class="py-xl bg-surface-container-lowest/50 reveal" id="skills">
-<div class="px-gutter max-w-container-max mx-auto">
-<h2 class="font-headline-lg text-headline-lg text-center mb-16 uppercase tracking-tighter">Tech_Stack</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="glass p-8 space-y-6 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] transition-all duration-500 hover:-translate-y-2">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">psychology</span>
-<h3 class="font-headline-md text-primary">GenAI &amp; LLM</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">LangChain</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">LangGraph</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">LlamaIndex</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">RAG Pipelines</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">Hybrid Retrieval</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">Prompt Eng.</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">FAISS</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">ChromaDB</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">Groq API</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">OpenAI API</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">GGUF LLMs</span>
-</div>
-</div>
-<div class="glass p-8 space-y-6 hover:shadow-[0_0_30px_rgba(209,188,255,0.15)] transition-all duration-500 hover:-translate-y-2">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-secondary">code</span>
-<h3 class="font-headline-md text-secondary">Languages</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">Python</span>
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">SQL</span>
-</div>
-</div>
-<div class="glass p-8 space-y-6 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] transition-all duration-500 hover:-translate-y-2">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">cloud</span>
-<h3 class="font-headline-md text-primary">Backend/Ops</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">FastAPI</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">Flask</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">REST APIs</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">Docker</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">docker-compose</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">MLflow</span>
-<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-code-sm text-primary uppercase">PostgreSQL</span>
-</div>
-</div>
-<div class="glass p-8 space-y-6 hover:shadow-[0_0_30px_rgba(209,188,255,0.15)] transition-all duration-500 hover:-translate-y-2">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-secondary">psychology_alt</span>
-<h3 class="font-headline-md text-secondary">AI/ML Stack</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">TensorFlow</span>
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">Keras</span>
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">Scikit-learn</span>
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">Computer Vision</span>
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">NLP</span>
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">Ensemble</span>
-<span class="px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full text-code-sm text-secondary uppercase">Fine-tuning</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Projects Section -->
-<section class="py-xl px-gutter max-w-container-max mx-auto reveal" id="projects">
-<h2 class="font-headline-lg text-headline-lg mb-12 border-b border-outline-variant/30 pb-4">DEPLOYED_NODES</h2>
 
-<!-- Filter Tabs -->
-<div class="flex flex-wrap gap-3 mb-12 justify-center font-label-md text-label-md uppercase tracking-wider">
-  <button class="filter-btn active border-primary text-primary bg-primary/10 px-6 py-2 border font-label-md uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,212,255,0.2)]" data-filter="all" onclick="filterProjects('all')">
-    All_Nodes
-  </button>
-  <button class="filter-btn border-outline-variant text-on-surface-variant px-6 py-2 border font-label-md uppercase tracking-wider transition-all duration-300 hover:text-primary hover:border-primary/50 hover:bg-primary/5" data-filter="featured" onclick="filterProjects('featured')">
-    Featured_AI
-  </button>
-  <button class="filter-btn border-outline-variant text-on-surface-variant px-6 py-2 border font-label-md uppercase tracking-wider transition-all duration-300 hover:text-primary hover:border-primary/50 hover:bg-primary/5" data-filter="ml" onclick="filterProjects('ml')">
-    ML_&_Vision
-  </button>
-  <button class="filter-btn border-outline-variant text-on-surface-variant px-6 py-2 border font-label-md uppercase tracking-wider transition-all duration-300 hover:text-primary hover:border-primary/50 hover:bg-primary/5" data-filter="data-web" onclick="filterProjects('data-web')">
-    Data_&_Web
-  </button>
-</div>
+        <div class="hero__visual">
+          <span class="shape shape--ring" aria-hidden="true"></span>
+          <span class="shape shape--dot-lg" aria-hidden="true"></span>
+          <span class="shape shape--dot-sm" aria-hidden="true"></span>
+          <span class="shape shape--half" aria-hidden="true"></span>
+          <span class="shape shape--dot-xs" aria-hidden="true"></span>
+          <div class="portrait">
+            <!-- Photo: assets/profile.jpg (watermark removed from the original) -->
+            <img src="assets/profile.jpg" alt="Portrait of Logesh S" onerror="this.parentElement.classList.add('portrait--fallback'); this.remove();" />
+            <div class="portrait__monogram" aria-hidden="true">LS</div>
+          </div>
+        </div>
+      </div>
+      <span class="hero__bar" aria-hidden="true"></span>
+    </section>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- ── About (slides over the hero) ─────────────────────── -->
+    <section id="about" class="panel about">
+      <div class="container about__grid">
+        <div class="about__copy">
+          <p class="eyebrow" data-fade>About Me <span class="squiggle"></span></p>
+          <h2 class="h2" data-split>Engineering AI that ships, from research to production</h2>
+          <p class="body" data-fade>
+            Applied AI engineer and startup founder with hands-on experience building production-grade
+            RAG pipelines, on-device LLMs, advanced computer vision systems and research-level deep learning
+            architectures. I ship end-to-end AI applications using PyTorch, TensorFlow, LangChain, FastAPI
+            and Docker. Interned at LongArc and Infosys Springboard, and led a 100+ member technical
+            association as President.
+          </p>
+          <ul class="checklist" data-stagger>
+            <li>RAG Pipelines &amp; LLM Apps</li>
+            <li>On-device LLMs (GGUF)</li>
+            <li>Computer Vision</li>
+            <li>Medical Imaging Research</li>
+            <li>Test-Time Adaptation</li>
+            <li>FastAPI · Docker · MLflow</li>
+          </ul>
+          <a href="#experience" class="btn btn--lime" data-fade>My Experience</a>
+        </div>
 
-<!-- Project 1: Hybrid RAG AI Assistant -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-primary hover:shadow-[0_0_40px_rgba(0,212,255,0.2)] transition-all duration-500 flex flex-col justify-between" data-categories="featured">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-primary/80 tracking-widest uppercase bg-primary/10 px-2 py-0.5 border border-primary/20">[ HYBRID RAG ]</span>
-      <div class="flex gap-3">
-        <a class="text-primary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/srop-pipeline" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
-        <a class="text-primary hover:scale-125 transition-transform flex items-center" href="https://srop-pipeline.onrender.com/docs" target="_blank" title="Live API Docs">
-          <span class="material-symbols-outlined text-[20px]">open_in_new</span>
-        </a>
-      </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-primary transition-colors flex items-center gap-2">
-      Hybrid RAG AI Assistant <span class="text-yellow-400 text-base" title="Featured Recruiter Project">★</span>
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      Production-grade RAG system built for intelligent document question answering using hybrid retrieval and LLM-powered response generation.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Python</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">FastAPI</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Groq API</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">FAISS</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">MLflow</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Docker</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-primary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>FastAPI + FAISS + Groq (Llama 3.3 70B)</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Hybrid Retrieval (Vector Search + Web Search)</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Session-based Memory & MLflow Observability</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Dockerized Deployment & Sub-800ms Latency</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="Hybrid RAG AI Assistant" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/hybrid_rag_assistant.png"/>
-  </div>
-</div>
+        <div class="about__visual">
+          <div class="code-card" data-parallax="-40">
+            <div class="code-card__bar"><i></i><i></i><i></i><span>rag_pipeline.py</span></div>
+<pre><code><span class="k">from</span> fastapi <span class="k">import</span> FastAPI
+<span class="k">from</span> retriever <span class="k">import</span> hybrid_search
 
-<!-- Project 2: AI Assistant Comparison Platform -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-secondary hover:shadow-[0_0_40px_rgba(209,188,255,0.2)] transition-all duration-500 flex flex-col justify-between" data-categories="featured">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-secondary/80 tracking-widest uppercase bg-secondary/10 px-2 py-0.5 border border-secondary/20">[ LLM BENCHMARK ]</span>
-      <div class="flex gap-3">
-        <a class="text-secondary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/AI-Assistant-Comparison-Platform" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
-        <a class="text-secondary hover:scale-125 transition-transform flex items-center" href="https://huggingface.co/spaces/logesh28/ai-assistant-comparison" target="_blank" title="Live Space Demo">
-          <span class="material-symbols-outlined text-[20px]">open_in_new</span>
-        </a>
-      </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-secondary transition-colors flex items-center gap-2">
-      AI Comparison Platform <span class="text-yellow-400 text-base" title="Featured Recruiter Project">★</span>
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      Built a platform to compare Open-Source and Frontier LLMs across safety, hallucination, latency, and conversational performance.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Python</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Streamlit</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Hugging Face</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Groq</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Qwen 2.5</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-secondary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Qwen2.5 vs Llama Comparison</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Multi-turn Memory & Jailbreak Protection</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Hallucination Evaluation & Latency Benchmarking</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="AI Assistant Comparison Platform" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/ai_comparison_platform.png"/>
-  </div>
-</div>
+app = FastAPI()
 
-<!-- Project 3: AI-Powered LinkedIn Automation Bot -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-primary/60 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)] transition-all duration-500 flex flex-col justify-between" data-categories="featured">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-primary/70 tracking-widest uppercase bg-primary/5 px-2 py-0.5 border border-primary/10">[ AUTOMATION ]</span>
-      <div class="flex gap-3">
-        <a class="text-primary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/Vidhai-Bot-Automated-AI-Content-Engine-for-LinkedIn" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
+<span class="d">@app.post</span>(<span class="s">"/ask"</span>)
+<span class="k">async def</span> <span class="f">ask</span>(q: Query):
+    docs = hybrid_search(
+        q.text, k=<span class="n">8</span>,
+        sources=[<span class="s">"faiss"</span>, <span class="s">"web"</span>])
+    <span class="k">return</span> llm.answer(q, docs)
+<span class="c"># p95 latency: 780ms ✓</span></code></pre>
+          </div>
+          <div class="stat-card" data-parallax="30">
+            <span class="stat-card__num"><span data-count="4">4</span></span>
+            <span class="stat-card__label">Industry<br />internships</span>
+          </div>
+          <div class="tag-card" data-parallax="60">
+            <span>PyTorch</span><span>LangChain</span><span>Vision Mamba</span><span>FAISS</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-primary transition-colors flex items-center gap-2">
-      LinkedIn Automation Bot <span class="text-yellow-400 text-base" title="Featured Recruiter Project">★</span>
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      LLM-powered content automation pipeline for generating and publishing professional LinkedIn content.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Python</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Gemini 2.5 Flash</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">LinkedIn API</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">OAuth 2.0</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-primary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>AI Content Generation & Formatting</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Automated Posting Workflow Automation</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>OAuth 2.0 Secure Authentication</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Prompt Engineering Framework</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="LinkedIn Automation Bot" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/linkedin_automation_bot.png"/>
-  </div>
-</div>
+    </section>
 
-<!-- Project 4: Aura AID – Offline AI Safety App -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-secondary/60 hover:shadow-[0_0_40px_rgba(209,188,255,0.15)] transition-all duration-500 flex flex-col justify-between" data-categories="featured ml">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-secondary/70 tracking-widest uppercase bg-secondary/5 px-2 py-0.5 border border-secondary/10">[ OFFLINE LLM ]</span>
-      <div class="flex gap-3">
-        <a class="text-secondary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/ResQ-AI" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
-        <a class="text-secondary hover:scale-125 transition-transform flex items-center" href="https://ieeexplore.ieee.org/document/11527983" target="_blank" title="IEEE Publication">
-          <span class="material-symbols-outlined text-[20px]">menu_book</span>
-        </a>
-      </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-secondary transition-colors flex items-center gap-2">
-      Aura AID – Offline Safety <span class="text-yellow-400 text-base" title="Featured Recruiter Project">★</span>
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      Offline-first Android safety application powered by on-device LLMs for emergency scenarios.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Kotlin</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Jetpack Compose</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">RunAnywhere SDK</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">GGUF LLM</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-secondary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>On-device Offline AI Assistant</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Shake-to-SOS & Automatic Crash Detection</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Live Location Sharing & Offline First-Aid Assist</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Zero Cloud Dependency Deployment</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="Aura AID" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/aura_aid_offline_safety.png"/>
-  </div>
-</div>
+    <!-- ── Skills ────────────────────────────────────────────── -->
+    <section id="skills" class="skills">
+      <div class="glow glow--center" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-fade><span class="squiggle"></span> My Skills <span class="squiggle"></span></p>
+          <h2 class="h2" data-split>The stack I use to take models from notebook to production</h2>
+        </div>
 
-<!-- Project 5: EcoPackAI -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-primary/40 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)] transition-all duration-500 flex flex-col justify-between" data-categories="ml">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-primary/70 tracking-widest uppercase bg-primary/5 px-2 py-0.5 border border-primary/10">[ ANALYTICS / FLASK ]</span>
-      <div class="flex gap-3">
-        <a class="text-primary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/EcoPackAI" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
+        <div class="skill-grid" data-stagger>
+          <article class="skill-card">
+            <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+            <h3>Languages</h3>
+            <div class="chips"><span>Python</span><span>SQL</span><span>Statistics</span></div>
+          </article>
+          <article class="skill-card">
+            <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.9 2.1 2.1.9-2.1.9L19 21l-.9-2.1-2.1-.9 2.1-.9z"/></svg></span>
+            <h3>GenAI &amp; LLM</h3>
+            <div class="chips"><span>LangChain</span><span>LangGraph</span><span>LlamaIndex</span><span>RAG Pipelines</span><span>Hybrid Retrieval</span><span>Prompt Engineering</span><span>Embeddings &amp; Vector Search</span><span>FAISS</span><span>ChromaDB</span><span>Groq API</span><span>OpenAI API</span><span>On-device LLMs</span><span>GGUF</span></div>
+          </article>
+          <article class="skill-card">
+            <span class="icon-badge"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>
+            <h3>AI / ML</h3>
+            <div class="chips"><span>PyTorch</span><span>TensorFlow</span><span>Vision Mamba</span><span>TabNet</span><span>KAN</span><span>Computer Vision</span><span>NLP</span><span>Test-Time Adaptation</span><span>DL Architecture</span><span>Fine-tuning</span></div>
+          </article>
+          <article class="skill-card">
+            <span class="icon-badge"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span>
+            <h3>Backend &amp; MLOps</h3>
+            <div class="chips"><span>FastAPI</span><span>Flask</span><span>REST APIs</span><span>Docker</span><span>docker-compose</span><span>MLflow</span><span>PostgreSQL</span><span>Model Deployment &amp; Serving</span></div>
+          </article>
+        </div>
       </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-primary transition-colors flex items-center gap-2">
-      EcoPackAI
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      Sustainable packaging recommendation engine developed during Infosys Springboard internship.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Flask</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">PostgreSQL</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">XGBoost</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-primary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Sustainability Analytics Dashboard</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Packaging Recommendation Engine</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Business Intelligence & Supply Chain Insights</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="EcoPackAI" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/ecopack_ai.png"/>
-  </div>
-</div>
+    </section>
 
-<!-- Project 6: Multi-User Real-Time Eye Gaze Tracking -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-secondary/40 hover:shadow-[0_0_40px_rgba(209,188,255,0.15)] transition-all duration-500 flex flex-col justify-between" data-categories="ml">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-secondary/70 tracking-widest uppercase bg-secondary/5 px-2 py-0.5 border border-secondary/10">[ VISION / CLIENT ]</span>
-      <div class="flex gap-3">
-        <a class="text-secondary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/Eye-Gaze-Tracker-" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
+    <!-- ── Projects ──────────────────────────────────────────── -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-fade>My Projects <span class="squiggle"></span></p>
+            <h2 class="h2" data-split>11 projects across enterprise, research &amp; GenAI</h2>
+          </div>
+          <p class="body" data-fade>
+            From supply-chain optimisation tools in production at LongArc, to research-level architectures
+            for medical imaging and autonomous driving, to RAG assistants and on-device LLM apps.
+          </p>
+        </div>
       </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-secondary transition-colors flex items-center gap-2">
-      Multi-User Eye Gaze Tracking
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      Real-time eye gaze tracking system capable of tracking multiple users simultaneously.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Python</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">OpenCV</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">MediaPipe</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Tkinter</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-secondary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>5 Concurrent Users Real-Time Support</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>28+ FPS Performance Iris Tracker</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Head Pose & Face Recognition Engine</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Client Project: Lavendel Consulting</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="Eye Gaze Tracker" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/eye_gaze_tracker.png"/>
-  </div>
-</div>
 
-<!-- Project 7: Gender Prediction System -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-primary/30 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)] transition-all duration-500 flex flex-col justify-between" data-categories="ml">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-primary/60 tracking-widest uppercase bg-primary/5 px-2 py-0.5 border border-primary/10">[ ML / VISION ]</span>
-      <div class="flex gap-3">
-        <a class="text-primary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/Gender-Prediction" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
+      <!-- Pinned stage: vertical scroll drives the cards sideways -->
+      <div class="h-stage" data-hscroll>
+        <div class="container">
+          <div class="filters" role="tablist" aria-label="Filter projects">
+            <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All <sup></sup></button>
+            <button class="filter" data-filter="enterprise" role="tab" aria-selected="false">Enterprise <sup></sup></button>
+            <button class="filter" data-filter="research" role="tab" aria-selected="false">Research <sup></sup></button>
+            <button class="filter" data-filter="genai" role="tab" aria-selected="false">GenAI &amp; Production <sup></sup></button>
+          </div>
+        </div>
+        <div class="h-viewport">
+          <div class="h-track" id="project-slides"></div>
+        </div>
+        <div class="container">
+          <div class="h-ui">
+            <div class="h-progress"><span></span></div>
+            <div class="h-count"><b class="js-current">01</b> / <span class="js-total">11</span></div>
+            <span class="h-hint">Scroll <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+          </div>
+        </div>
       </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-primary transition-colors flex items-center gap-2">
-      Gender Prediction System
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      Machine learning model designed for image-based classification of gender.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Python</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">OpenCV</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">Machine Learning</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-primary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Image Feature Engineering Classifier</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Predictive Analytics Framework</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="Gender Prediction" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/gender_prediction.png"/>
-  </div>
-</div>
 
-<!-- Project 8: Data Analytics Projects Collection -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-secondary/30 hover:shadow-[0_0_40px_rgba(209,188,255,0.15)] transition-all duration-500 flex flex-col justify-between" data-categories="data-web">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-secondary/60 tracking-widest uppercase bg-secondary/5 px-2 py-0.5 border border-secondary/10">[ DATA SCIENCE ]</span>
-      <div class="flex gap-3">
-        <a class="text-secondary hover:scale-125 transition-transform" href="https://github.com/LOGESH-28/Data-Analytics-Projects/tree/main/Data%20Analytics%20Projects" target="_blank" title="GitHub Repository">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
-      </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-secondary transition-colors flex items-center gap-2">
-      Data Analytics Collection
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      A collection of business intelligence, data processing, and analytical projects.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Excel</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Power BI</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Python</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-secondary bg-secondary/5">Pandas</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-secondary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Data Cleaning & Interactive Dashboarding</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Advanced Business Insights Optimization</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-secondary">&gt;</span> <span>Data Visualization pipelines</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="Data Analytics" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/data_analytics_projects.png"/>
-  </div>
-</div>
+      <p class="projects__more" data-fade>Want the technical deep-dive? <a href="#contact" class="link-underline">Let's talk</a></p>
+    </section>
 
-<!-- Project 9: Neo Transit -->
-<div class="project-card glass relative overflow-hidden group border-t-4 border-primary/20 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)] transition-all duration-500 flex flex-col justify-between" data-categories="data-web">
-  <div class="p-8 space-y-4 flex-grow">
-    <div class="flex justify-between items-start">
-      <span class="text-[10px] font-code-sm text-primary/50 tracking-widest uppercase bg-primary/5 px-2 py-0.5 border border-primary/10">[ WEB APP ]</span>
-      <div class="flex gap-3">
-        <a class="text-primary hover:scale-125 transition-transform flex items-center" href="https://neo-transit-erode.netlify.app/" target="_blank" title="Live Demo">
-          <span class="material-symbols-outlined text-[20px]">open_in_new</span>
-        </a>
-      </div>
-    </div>
-    <h3 class="font-headline-md text-xl text-white group-hover:text-primary transition-colors flex items-center gap-2">
-      Neo Transit
-    </h3>
-    <p class="text-on-surface-variant text-sm leading-relaxed">
-      Smart transportation platform designed to improve public transit accessibility.
-    </p>
-    <div class="flex flex-wrap gap-2 pt-2">
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">HTML</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">CSS</span>
-      <span class="text-[10px] font-code-sm border border-outline-variant px-2 py-0.5 rounded text-primary bg-primary/5">JavaScript</span>
-    </div>
-    <div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1">
-      <div class="text-[10px] font-code-sm text-primary/60 tracking-wider uppercase mb-1">Specs & Highlights:</div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Interactive Map Route Planning</span>
-      </div>
-      <div class="text-xs font-code-sm text-on-surface-variant flex items-start gap-1">
-        <span class="text-primary">&gt;</span> <span>Dynamic Public Transit Accessibility Engine</span>
-      </div>
-    </div>
-  </div>
-  <div class="h-40 bg-surface-container overflow-hidden relative mt-auto border-t border-outline-variant/10">
-    <img alt="Neo Transit" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="assets/neo_transit.png"/>
-  </div>
-</div>
-
-</div>
-</section>
-<!-- Experience & Education Section -->
-<section class="py-xl bg-surface-container-lowest reveal" id="experience">
-<div class="px-gutter max-w-container-max mx-auto">
-<div class="grid lg:grid-cols-2 gap-16">
-<!-- Experience Column -->
-<div class="space-y-12">
-<h2 class="font-headline-lg text-headline-lg border-b border-outline-variant/30 pb-4 uppercase tracking-tighter text-primary">NeuralLink_Experience</h2>
-<div class="relative border-l-2 border-outline-variant/30 ml-4 space-y-12">
-<!-- Entry 1 -->
-<div class="relative pl-10 group">
-<div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-primary timeline-node-pulse shadow-[0_0_15px_#a8e8ff] group-hover:scale-125 transition-transform"></div>
-<span class="font-code-sm text-primary uppercase tracking-widest block mb-1">Dec 2025 – Jan 2026</span>
-<h3 class="font-headline-md text-white text-xl group-hover:text-primary transition-colors">AI Intern</h3>
-<span class="text-label-md text-on-surface-variant uppercase block mb-3">Infosys Springboard</span>
-<ul class="text-on-surface-variant text-sm leading-relaxed list-none space-y-2">
-<li class="flex items-start gap-2">
-<span class="text-primary mt-1">&gt;</span>
-<span>Built <strong>EcoPackAI</strong> — a sustainable packaging recommendation engine using Flask, PostgreSQL, and XGBoost to generate supply-chain sustainability insights for enterprise clients.</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-primary mt-1">&gt;</span>
-<span>Developed a full-stack BI dashboard to visualize sustainability metrics, enabling data-driven packaging decisions across product categories.</span>
-</li>
-</ul>
-</div>
-<!-- Entry 2 -->
-<div class="relative pl-10 group">
-<div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-secondary timeline-node-pulse shadow-[0_0_15px_#d1bcff] group-hover:scale-125 transition-transform"></div>
-<span class="font-code-sm text-secondary uppercase tracking-widest block mb-1">May 2025 – Aug 2025</span>
-<h3 class="font-headline-md text-white text-xl group-hover:text-secondary transition-colors">AI Intern</h3>
-<span class="text-label-md text-on-surface-variant uppercase block mb-3">Lavendel Consulting</span>
-<ul class="text-on-surface-variant text-sm leading-relaxed list-none space-y-2">
-<li class="flex items-start gap-2">
-<span class="text-secondary mt-1">&gt;</span>
-<span>Delivered a production real-time gaze tracking system for a client use case — collaborated with cross-functional team to meet performance requirements for 5 concurrent users.</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-secondary mt-1">&gt;</span>
-<span>Handled full pipeline: face recognition, per-user calibration, gaze regression, and live multi-user rendering at stable high FPS.</span>
-</li>
-</ul>
-</div>
-<!-- Entry 3 -->
-<div class="relative pl-10 group">
-<div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-primary/60 timeline-node-pulse shadow-[0_0_15px_rgba(168,232,255,0.4)] group-hover:scale-125 transition-transform"></div>
-<span class="font-code-sm text-primary/60 uppercase tracking-widest block mb-1">2024</span>
-<h3 class="font-headline-md text-white text-xl group-hover:text-primary/80 transition-colors">In-Plant Intern</h3>
-<span class="text-label-md text-on-surface-variant uppercase block mb-3">Global Knowledge</span>
-<ul class="text-on-surface-variant text-sm leading-relaxed list-none space-y-2">
-<li class="flex items-start gap-2">
-<span class="text-primary/60 mt-1">&gt;</span>
-<span>Applied KNIME for data preprocessing, feature extraction, and model deployment workflow automation.</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<!-- Education Column -->
-<div class="space-y-12">
-<h2 class="font-headline-lg text-headline-lg border-b border-outline-variant/30 pb-4 uppercase tracking-tighter text-secondary">NeuralLink_Education</h2>
-<div class="relative border-l-2 border-outline-variant/30 ml-4 space-y-12">
-<!-- B.Tech -->
-<div class="relative pl-10 group">
-<div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-secondary timeline-node-pulse shadow-[0_0_15px_#d1bcff] group-hover:scale-125 transition-transform"></div>
-<span class="font-code-sm text-secondary uppercase tracking-widest block mb-1">2022 – 2026</span>
-<h3 class="font-headline-md text-white text-xl group-hover:text-secondary transition-colors">B.Tech — Artificial Intelligence and Data Science</h3>
-<span class="text-label-md text-on-surface-variant uppercase block mb-3">Kangeyam Institute of Technology</span>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-2">
-<strong>CGPA: 8.43</strong>
-</p>
-<p class="text-xs text-on-surface-variant/80 font-code-sm leading-relaxed">
-<span class="text-secondary">&gt;</span> Relevant Coursework: Data Science, Machine Learning, Deep Learning, Python Programming, Data Visualization
-</p>
-</div>
-<!-- HSC -->
-<div class="relative pl-10 group">
-<div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-primary timeline-node-pulse shadow-[0_0_15px_#a8e8ff] group-hover:scale-125 transition-transform"></div>
-<span class="font-code-sm text-primary uppercase tracking-widest block mb-1">Completed 2022</span>
-<h3 class="font-headline-md text-white text-xl group-hover:text-primary transition-colors">HSC (Class XII)</h3>
-<span class="text-label-md text-on-surface-variant uppercase block mb-3">Navarasam Matric Hr Sec School</span>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-<strong>Percentage: 77.8%</strong>
-</p>
-</div>
-<!-- SSLC -->
-<div class="relative pl-10 group">
-<div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-primary/60 timeline-node-pulse shadow-[0_0_15px_rgba(168,232,255,0.4)] group-hover:scale-125 transition-transform"></div>
-<span class="font-code-sm text-primary/60 uppercase tracking-widest block mb-1">Completed 2020</span>
-<h3 class="font-headline-md text-white text-xl group-hover:text-primary/80 transition-colors">SSLC (Class X)</h3>
-<span class="text-label-md text-on-surface-variant uppercase block mb-3">Navarasam Matric Hr Sec School</span>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-<strong>Percentage: 98%</strong>
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Leadership Section -->
-<section class="py-xl px-gutter max-w-container-max mx-auto reveal">
-<h2 class="font-headline-lg text-headline-lg mb-12 uppercase text-center">Leadership_Nodes</h2>
-<div class="grid md:grid-cols-2 gap-8">
-<div class="glass p-10 flex flex-col items-center text-center space-y-6 hover:border-secondary/40 hover:shadow-[0_0_30px_rgba(209,188,255,0.1)] transition-all">
-<div class="w-16 h-16 rounded-full glass flex items-center justify-center border-secondary shadow-[0_0_20px_rgba(209,188,255,0.2)]">
-<span class="material-symbols-outlined text-secondary text-3xl">groups</span>
-</div>
-<h3 class="font-headline-md text-white">Association President</h3>
-<span class="font-code-sm text-secondary uppercase tracking-widest block text-xs">Aug 2025 – May 2026</span>
-<p class="text-on-surface-variant">Led a 100+ member student association (Association of AI &amp; Data Science | Kangeyam Institute of Technology) — organized technical events, hackathons, and industry speaker sessions; drove collaborations with companies for student exposure to real-world AI roles.</p>
-</div>
-<div class="glass p-10 flex flex-col items-center text-center space-y-6 hover:border-secondary/40 hover:shadow-[0_0_30px_rgba(209,188,255,0.1)] transition-all">
-<div class="w-16 h-16 rounded-full glass flex items-center justify-center border-secondary shadow-[0_0_20px_rgba(209,188,255,0.2)]">
-<span class="material-symbols-outlined text-secondary text-3xl">volunteer_activism</span>
-</div>
-<h3 class="font-headline-md text-white">Rotaract Secretary &amp; Mentor</h3>
-<span class="font-code-sm text-secondary uppercase tracking-widest block text-xs">Jul 2024 – May 2026</span>
-<p class="text-on-surface-variant">Managed 25+ events as Secretary for the Rotaract Club | Kangeyam Institute of Technology; transitioned to Mentor role to guide juniors in technical projects and leadership development.</p>
-</div>
-</div>
-</section>
-<!-- Certs & Awards -->
-<section class="py-xl bg-surface-container-low reveal">
-<div class="px-gutter max-w-container-max mx-auto">
-<div class="grid lg:grid-cols-2 gap-16">
-<div class="space-y-8">
-<h3 class="font-headline-md text-primary flex items-center gap-4">
-<span class="material-symbols-outlined">verified</span> Certifications
-                </h3>
-<div class="space-y-4 max-h-[400px] overflow-y-auto pr-4 scrollbar-custom">
-<div class="glass p-4 border-l-2 border-primary hover:translate-x-2 hover:bg-primary/5 transition-all">
-<h4 class="font-bold">Joy of Computing Using Python</h4>
-<p class="text-xs text-on-surface-variant">NPTEL</p>
-</div>
-<div class="glass p-4 border-l-2 border-primary hover:translate-x-2 hover:bg-primary/5 transition-all">
-<h4 class="font-bold">Foundation of Cloud, IoT &amp; Edge ML</h4>
-<p class="text-xs text-on-surface-variant">NPTEL</p>
-</div>
-<div class="glass p-4 border-l-2 border-primary hover:translate-x-2 hover:bg-primary/5 transition-all">
-<h4 class="font-bold">Artificial Intelligence Primer</h4>
-<p class="text-xs text-on-surface-variant">Infosys Springboard</p>
-</div>
-<div class="glass p-4 border-l-2 border-primary hover:translate-x-2 hover:bg-primary/5 transition-all">
-<h4 class="font-bold">Prompt Engineering</h4>
-<p class="text-xs text-on-surface-variant">Infosys Springboard</p>
-</div>
-</div>
-</div>
-<div class="space-y-8">
-<h3 class="font-headline-md text-secondary flex items-center gap-4">
-<span class="material-symbols-outlined">emoji_events</span> Honors &amp; Awards
-                </h3>
-<div class="space-y-4 max-h-[400px] overflow-y-auto pr-4 scrollbar-custom">
-<div class="glass p-4 border-l-2 border-secondary hover:translate-x-2 hover:bg-secondary/5 transition-all">
-<h4 class="font-bold">🏆 Best Secretary Award</h4>
-<p class="text-xs text-on-surface-variant">Leadership recognition, Rotaract Club, RI District 3203</p>
-</div>
-<div class="glass p-4 border-l-2 border-secondary hover:translate-x-2 hover:bg-secondary/5 transition-all">
-<h4 class="font-bold">🥇 Outstanding Academic Performance</h4>
-<p class="text-xs text-on-surface-variant">Top performer recognition, RI District 3203</p>
-</div>
-<div class="glass p-4 border-l-2 border-secondary hover:translate-x-2 hover:bg-secondary/5 transition-all">
-<h4 class="font-bold">🚀 1st Prize</h4>
-<p class="text-xs text-on-surface-variant">Coding &amp; Debugging Competition, Vellalar College of Engineering and Technology</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Connect Section -->
-<section class="py-xl px-gutter max-w-container-max mx-auto reveal" id="contact">
-  <div class="space-y-12">
-    <div class="text-center space-y-4">
-      <h2 class="font-orbitron text-headline-lg text-4xl md:text-5xl font-bold tracking-tighter text-primary neon-text-cyan uppercase animate-pulse">
-        NeuralLink_Connect
-      </h2>
-      <p class="text-on-surface-variant max-w-2xl mx-auto text-body-lg">
-        Establish a secure connection channel. Reach out for collaboration, project inquiries, or recruitment.
-      </p>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
-      <!-- Contact Cards -->
-      <div class="lg:col-span-5 space-y-6">
-        <!-- WhatsApp Card -->
-        <a href="https://wa.me/919791735569?text=Hi%20Logesh,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" class="block glass p-6 group hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,212,255,0.15)] transition-all duration-300">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.502 4.905 1.503 5.459 0 9.897-4.435 9.9-9.9.002-2.647-1.024-5.133-2.888-7.002C16.699 1.884 14.207.859 11.562.859 6.104.859 1.666 5.297 1.663 10.757c-.001 1.954.512 3.86 1.482 5.568l-.979 3.578 3.673-.963zm12.177-7.464c-.302-.15-1.785-.882-2.057-.981-.273-.099-.471-.148-.67.15-.197.297-.768.98-.942 1.18-.173.199-.347.223-.649.072-.302-.15-1.273-.469-2.427-1.496-.897-.8-1.502-1.79-1.678-2.09-.176-.3-.019-.462.132-.61.135-.133.303-.35.454-.524.152-.174.202-.298.303-.497.101-.2.05-.374-.025-.524-.074-.15-.67-1.613-.918-2.21-.242-.58-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.785-.73 2.034-1.433.248-.703.248-1.306.173-1.433-.075-.127-.273-.201-.575-.351z"/>
-              </svg>
-            </div>
+    <!-- ── Experience (dark panel, scroll-driven sideways) ─────── -->
+    <section id="experience" class="panel panel--dark experience">
+      <div class="glow glow--corner" aria-hidden="true"></div>
+      <div class="h-stage h-stage--dark" data-hscroll>
+        <div class="container">
+          <div class="section-head section-head--split">
             <div>
-              <span class="block text-xs font-code-sm text-primary uppercase tracking-widest">WhatsApp Secure Link</span>
-              <span class="block text-lg font-bold text-white group-hover:text-primary transition-colors">+91 97917 35569</span>
+              <p class="eyebrow eyebrow--light">My Experience <span class="squiggle"></span></p>
+              <h2 class="h2 h2--light" data-split>Where I've built, founded and shipped</h2>
             </div>
+            <p class="body body--light">Founder, research engineer and four industry internships — from client delivery to research-level deep learning.</p>
           </div>
-        </a>
-
-        <!-- Call Card -->
-        <a href="tel:+919791735569" class="block glass p-6 group hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(209,188,255,0.15)] transition-all duration-300">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-2xl">call</span>
-            </div>
-            <div>
-              <span class="block text-xs font-code-sm text-secondary uppercase tracking-widest">Direct Voice Line</span>
-              <span class="block text-lg font-bold text-white group-hover:text-secondary transition-colors">+91 97917 35569</span>
-            </div>
+        </div>
+        <div class="h-viewport">
+          <div class="h-track">
+            <article class="h-card exp-card">
+              <header class="exp-card__head">
+                <span class="exp-card__logo">RB</span>
+                <div><h3>Deep Learning Research Engineer</h3><p>ResearchBrains · Erode, India</p></div>
+              </header>
+              <span class="exp-card__date">May 2026 – Present · Freelance</span>
+              <ul>
+                <li>Architected and delivered 6 research-level deep learning projects across advanced computer vision, medical imaging and adaptation frameworks.</li>
+                <li>Optimised Plain IoU, F1 score, Expected Calibration Error (ECE) and per-frame latency.</li>
+              </ul>
+            </article>
+            <article class="h-card exp-card">
+              <header class="exp-card__head">
+                <span class="exp-card__logo">LA</span>
+                <div><h3>AI Intern</h3><p>LongArc · Bangalore, India</p></div>
+              </header>
+              <span class="exp-card__date">Jun 2026 – Sep 2026</span>
+              <ul>
+                <li>Engineered AI-powered supply-chain optimisation and warehouse layout/diagnostic tools using PyTorch.</li>
+                <li>Improved space utilisation by <b>18%</b> and cut route calculation times by <b>30%</b>.</li>
+              </ul>
+            </article>
+            <article class="h-card exp-card exp-card--feature">
+              <header class="exp-card__head">
+                <span class="exp-card__logo">SS</span>
+                <div><h3>Founder &amp; Developer</h3><p>Stealth Startup · Tirupur · Hybrid</p></div>
+              </header>
+              <span class="exp-card__date">Oct 2025 – Apr 2026 · Full-time</span>
+              <ul>
+                <li>Led end-to-end project lifecycles — from client discussions and requirement gathering to delivery and deployment.</li>
+                <li>Translated business needs into technical roadmaps and milestones; managed timelines, resources and client relations.</li>
+                <li>Designed full-stack apps and AI-powered solutions: modular APIs, database schemas and deployment workflows.</li>
+                <li>Created technical and business content — documentation, product copy and workflow specifications.</li>
+              </ul>
+              <p class="exp-card__impact"><b>Key impact:</b> bridged business requirements and technical execution, driving projects from concept to deployment.</p>
+            </article>
+            <article class="h-card exp-card">
+              <header class="exp-card__head">
+                <span class="exp-card__logo">IS</span>
+                <div><h3>AI Intern</h3><p>Infosys Springboard · Remote</p></div>
+              </header>
+              <span class="exp-card__date">Nov 2025 – Jan 2026</span>
+              <ul>
+                <li>Built EcoPackAI, a sustainable packaging platform using Flask, PostgreSQL and XGBoost predictive modelling.</li>
+                <li>Delivered full-stack BI dashboards on top of the prediction pipeline.</li>
+              </ul>
+            </article>
+            <article class="h-card exp-card">
+              <header class="exp-card__head">
+                <span class="exp-card__logo">LC</span>
+                <div><h3>AI Intern</h3><p>Lavendel Consulting · Coimbatore / Erode</p></div>
+              </header>
+              <span class="exp-card__date">May 2025 – Aug 2025</span>
+              <ul>
+                <li>Delivered a production-grade multi-user real-time eye gaze tracking system.</li>
+                <li>Supported 5 concurrent users at a stable 28+ FPS.</li>
+              </ul>
+            </article>
+            <article class="h-card exp-card">
+              <header class="exp-card__head">
+                <span class="exp-card__logo">GK</span>
+                <div><h3>Intern</h3><p>Global Knowledge</p></div>
+              </header>
+              <span class="exp-card__date">Internship</span>
+              <!-- TODO: add role dates and 1–2 bullet points for Global Knowledge -->
+              <ul>
+                <li>Industry internship.</li>
+              </ul>
+            </article>
           </div>
-        </a>
-
-        <!-- Email Card -->
-        <a href="mailto:llogesh28102004@gmail.com" class="block glass p-6 group hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,212,255,0.15)] transition-all duration-300">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-2xl">mail</span>
-            </div>
-            <div>
-              <span class="block text-xs font-code-sm text-primary uppercase tracking-widest">Secure Mail Connection</span>
-              <span class="block text-lg font-bold text-white group-hover:text-primary transition-colors truncate">llogesh28102004@gmail.com</span>
-            </div>
+        </div>
+        <div class="container">
+          <div class="h-ui h-ui--light">
+            <div class="h-progress"><span></span></div>
+            <div class="h-count"><b class="js-current">01</b> / <span class="js-total">06</span></div>
+            <span class="h-hint">Scroll <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
           </div>
-        </a>
+        </div>
       </div>
+    </section>
 
-      <!-- Contact Form -->
-      <div class="lg:col-span-7">
-        <form id="contact-form" action="https://formsubmit.co/ajax/llogesh28102004@gmail.com" method="POST" onsubmit="handleContactSubmit(event)" class="glass p-8 space-y-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label for="name" class="block text-xs font-code-sm text-primary uppercase tracking-widest">Sender_Name</label>
-              <input type="text" id="name" name="name" required class="w-full bg-surface-container/50 border border-outline-variant/30 rounded p-3 text-white placeholder-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Enter your name">
-            </div>
-            <div class="space-y-2">
-              <label for="email" class="block text-xs font-code-sm text-primary uppercase tracking-widest">Sender_Email</label>
-              <input type="email" id="email" name="email" required class="w-full bg-surface-container/50 border border-outline-variant/30 rounded p-3 text-white placeholder-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Enter your email">
-            </div>
+    <!-- ── Counters band ─────────────────────────────────────── -->
+    <section class="counters" aria-label="Key numbers">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-fade>Numbers that matter <span class="squiggle"></span></p>
+            <h2 class="h2" data-split>At a glance</h2>
           </div>
-          <div class="space-y-2">
-            <label for="subject" class="block text-xs font-code-sm text-primary uppercase tracking-widest">Transmission_Subject</label>
-            <input type="text" id="subject" name="_subject" required class="w-full bg-surface-container/50 border border-outline-variant/30 rounded p-3 text-white placeholder-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Enter message subject">
-          </div>
-          <div class="space-y-2">
-            <label for="message" class="block text-xs font-code-sm text-primary uppercase tracking-widest">Signal_Payload (Message)</label>
-            <textarea id="message" name="message" required rows="4" class="w-full bg-surface-container/50 border border-outline-variant/30 rounded p-3 text-white placeholder-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Type your message payload here..."></textarea>
-          </div>
-          <button type="submit" class="w-full py-4 bg-primary text-on-primary font-bold uppercase tracking-widest hover:shadow-[0_0_30px_rgba(0,212,255,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined">send</span>
-            Transmit Message
-          </button>
-        </form>
+          <p class="body" data-fade>Hands-on industry work, research depth and leadership — measured.</p>
+        </div>
       </div>
+      <div class="counter-band">
+        <div class="container counter-band__grid" data-stagger>
+          <div class="counter">
+            <span class="icon-badge icon-badge--dark"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
+            <div><b><span data-count="4">4</span></b><small>Internships</small></div>
+          </div>
+          <div class="counter">
+            <span class="icon-badge icon-badge--dark"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4zM3 12l9 4 9-4M3 17l9 4 9-4"/></svg></span>
+            <div><b><span data-count="11">11</span>+</b><small>Major &amp; research projects</small></div>
+          </div>
+          <div class="counter">
+            <span class="icon-badge icon-badge--dark"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M18 14a6 6 0 013.5 6"/></svg></span>
+            <div><b><span data-count="100">100</span>+</b><small>Students led</small></div>
+          </div>
+          <div class="counter">
+            <span class="icon-badge icon-badge--dark"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></span>
+            <div><b><span data-count="8.53" data-decimals="2">8.53</span></b><small>CGPA</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Education & leadership ────────────────────────────── -->
+    <section id="education" class="education">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-fade><span class="squiggle"></span> Education &amp; Leadership <span class="squiggle"></span></p>
+          <h2 class="h2" data-split>Learning, leading and giving back</h2>
+        </div>
+        <div class="edu-grid" data-stagger>
+          <article class="edu-card edu-card--feature">
+            <span class="edu-card__tag">Education</span>
+            <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+            <p>Kangeyam Institute of Technology</p>
+            <div class="edu-card__meta"><span>2022 – May 2026</span><span class="pill">CGPA 8.53</span></div>
+          </article>
+          <article class="edu-card">
+            <span class="edu-card__tag">Leadership</span>
+            <h3>President, Association of AI &amp; Data Science</h3>
+            <p>Managed 100+ members, hackathons and corporate collaborations.</p>
+            <div class="edu-card__meta"><span>Aug 2025 – May 2026</span></div>
+          </article>
+          <article class="edu-card">
+            <span class="edu-card__tag">Leadership</span>
+            <h3>Secretary &amp; Mentor, Rotaract Club</h3>
+            <p>Managed 25+ events. Awarded <b>Best Secretary</b> (RI District 3203).</p>
+            <div class="edu-card__meta"><span>Jul 2024 – May 2026</span></div>
+          </article>
+        </div>
+
+        <!-- Certifications -->
+        <div id="certifications" class="certs">
+          <div class="certs__head">
+            <p class="eyebrow" data-fade>Certifications <span class="squiggle"></span></p>
+            <h3 class="certs__title" data-split>Always learning</h3>
+          </div>
+          <div class="cert-grid" data-stagger>
+            <article class="cert-card">
+              <span class="cert-card__issuer">NPTEL</span>
+              <h4>Joy of Computing Using Python</h4>
+            </article>
+            <article class="cert-card">
+              <span class="cert-card__issuer">NPTEL</span>
+              <h4>Foundation of Cloud, IoT &amp; Edge ML</h4>
+            </article>
+            <article class="cert-card">
+              <span class="cert-card__issuer">Infosys</span>
+              <h4>Artificial Intelligence Primer</h4>
+            </article>
+            <article class="cert-card">
+              <span class="cert-card__issuer">Infosys</span>
+              <h4>Prompt Engineering</h4>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ───────────────────────────────────────────── -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact__card">
+          <div class="contact__info" data-slide="left">
+            <p class="eyebrow">Get In Touch <span class="squiggle"></span></p>
+            <h2 class="h2">Let's build something intelligent</h2>
+            <p class="body">Open to AI / ML engineering roles, research collaborations and freelance deep learning work.</p>
+            <ul class="contact__list">
+              <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> India · open to relocation &amp; remote</li>
+              <li data-link-wrap="email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="#" data-link="email"></a></li>
+              <li data-link-wrap="phone"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg> <a href="#" data-link="phone"></a></li>
+            </ul>
+            <div class="socials">
+              <a href="#" data-link="linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 9h3.5v11H4zM5.75 3.5a2 2 0 110 4 2 2 0 010-4zM10 9h3.3v1.6c.5-.9 1.7-1.9 3.6-1.9 3.6 0 4.1 2.3 4.1 5.4V20h-3.5v-5.2c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H10z" fill="currentColor" stroke="none"/></svg></a>
+              <a href="#" data-link="github" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0012 2z" fill="currentColor" stroke="none"/></svg></a>
+              <a href="#" data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+              <a href="#" data-link="email" data-icon-only aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+            </div>
+          </div>
+
+          <form class="contact__form" data-slide="right" novalidate>
+            <div class="field-row">
+              <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" required /></label>
+              <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required /></label>
+            </div>
+            <label class="field"><span>Subject</span><input name="subject" type="text" /></label>
+            <label class="field"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+            <!-- spam trap: real visitors never see or fill this -->
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button class="btn btn--lime" type="submit">Send Message</button>
+            <p class="form-note" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="logo logo--light"><span class="logo__mark"></span>Logesh<span class="logo__dot">.</span></a>
+      <p>© <span class="js-year"></span> Logesh S · Applied AI Engineer</p>
+      <nav class="footer__links" aria-label="Social">
+        <a href="#" data-link="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" data-link="github" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Success Toast Notification -->
-<div id="success-toast" class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 pointer-events-none">
-  <div class="glass border-primary p-4 rounded flex items-center gap-3 shadow-[0_0_30px_rgba(0,212,255,0.2)]">
-    <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-      <span class="material-symbols-outlined text-lg">check_circle</span>
-    </div>
-    <div>
-      <h5 class="font-bold text-white text-sm">Transmission Successful</h5>
-      <p class="text-xs text-on-surface-variant">Opening your email client to send message...</p>
-    </div>
-  </div>
-</div>
+  <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 
-<!-- Footer -->
-<footer class="py-xl border-t border-outline-variant/10">
-<div class="flex flex-col md:flex-row justify-between items-center gap-md px-gutter max-w-container-max mx-auto">
-<div class="text-center md:text-left">
-<div class="font-headline-lg text-headline-lg text-primary mb-2">LOGESH.AI</div>
-<p class="font-code-sm text-code-sm text-on-surface-variant">© 2024 LOGESH S. BUILT ON NEURAL GRID.</p>
-</div>
-<div class="flex gap-6">
-<a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:drop-shadow-[0_0_10px_rgba(0,212,255,0.5)] hover:text-primary transition-all duration-500" href="https://github.com/LOGESH-28" target="_blank" title="GitHub">
-  <!-- GitHub Icon -->
-  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222v3.293c0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-</a>
-<a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:drop-shadow-[0_0_10px_rgba(0,212,255,0.5)] hover:text-primary transition-all duration-500" href="mailto:llogesh28102004@gmail.com" title="Email">
-<span class="material-symbols-outlined">mail</span>
-</a>
-<a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:drop-shadow-[0_0_10px_rgba(0,212,255,0.5)] hover:text-primary transition-all duration-500" href="https://wa.me/919791735569?text=Hi%20Logesh,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" title="WhatsApp">
-  <!-- WhatsApp Icon -->
-  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.502 4.905 1.503 5.459 0 9.897-4.435 9.9-9.9.002-2.647-1.024-5.133-2.888-7.002C16.699 1.884 14.207.859 11.562.859 6.104.859 1.666 5.297 1.663 10.757c-.001 1.954.512 3.86 1.482 5.568l-.979 3.578 3.673-.963zm12.177-7.464c-.302-.15-1.785-.882-2.057-.981-.273-.099-.471-.148-.67.15-.197.297-.768.98-.942 1.18-.173.199-.347.223-.649.072-.302-.15-1.273-.469-2.427-1.496-.897-.8-1.502-1.79-1.678-2.09-.176-.3-.019-.462.132-.61.135-.133.303-.35.454-.524.152-.174.202-.298.303-.497.101-.2.05-.374-.025-.524-.074-.15-.67-1.613-.918-2.21-.242-.58-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.785-.73 2.034-1.433.248-.703.248-1.306.173-1.433-.075-.127-.273-.201-.575-.351z"/>
-  </svg>
-</a>
-</div>
-<nav class="flex gap-6 font-code-sm text-code-sm">
-<a class="text-on-surface-variant hover:text-secondary" href="#">Terminal</a>
-<a class="text-on-surface-variant hover:text-secondary" href="#">Network</a>
-<a class="text-on-surface-variant hover:text-secondary" href="#">Security</a>
-<a class="text-on-surface-variant hover:text-secondary" href="#">Privacy</a>
-</nav>
-</div>
-</footer>
-<!-- External Scripts for particles -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-    // Particles.js Config for Neural Background
-    particlesJS('particles-js', {
-        "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#a8e8ff" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5, "random": true },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": true, "distance": 150, "color": "#00d4ff", "opacity": 0.2, "width": 1 },
-            "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-            "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-        },
-        "retina_detect": true
-    });
-
-    // Typing Animation Script
-    const textElement = document.getElementById('typing-text');
-    const phrases = ['AI Engineer', 'RAG Systems Builder', 'GenAI Developer'];
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
-
-    function type() {
-        const currentPhrase = phrases[phraseIndex];
-        if (isDeleting) {
-            textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-            typeSpeed = 50;
-        } else {
-            textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
-            typeSpeed = 120;
-        }
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            isDeleting = true;
-            typeSpeed = 2000;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 500;
-        }
-
-        setTimeout(type, typeSpeed);
-    }
-
-    // Intersection Observer for Reveal Animations
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Stats Counter Animation
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetText = entry.target.getAttribute('data-count');
-                const target = parseFloat(targetText);
-                let count = 0;
-                const duration = 2000;
-                const frameRate = 1000/60;
-                const totalFrames = duration / frameRate;
-                const increment = target / totalFrames;
-                
-                const updateCount = () => {
-                    count += increment;
-                    if (count < target) {
-                        if (target % 1 === 0) {
-                            entry.target.textContent = Math.floor(count) + (target > 10 ? '+' : '');
-                        } else {
-                            entry.target.textContent = count.toFixed(2);
-                        }
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        entry.target.textContent = targetText + (target > 10 && target % 1 === 0 ? '+' : '');
-                    }
-                };
-                updateCount();
-                counterObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('[data-count]').forEach(counter => counterObserver.observe(counter));
-
-    // Project filtering function
-    function filterProjects(category) {
-        const cards = document.querySelectorAll('.project-card');
-        const buttons = document.querySelectorAll('.filter-btn');
-        
-        buttons.forEach(btn => {
-            if (btn.getAttribute('data-filter') === category) {
-                btn.classList.add('active', 'border-primary', 'text-primary', 'bg-primary/10');
-                btn.classList.remove('border-outline-variant', 'text-on-surface-variant');
-            } else {
-                btn.classList.remove('active', 'border-primary', 'text-primary', 'bg-primary/10');
-                btn.classList.add('border-outline-variant', 'text-on-surface-variant');
-            }
-        });
-
-        cards.forEach(card => {
-            const categories = card.getAttribute('data-categories').split(' ');
-            if (category === 'all' || categories.includes(category)) {
-                card.classList.remove('filtered-out');
-            } else {
-                card.classList.add('filtered-out');
-            }
-        });
-    }
-
-    // Contact Form Submission Handler
-    async function handleContactSubmit(event) {
-        event.preventDefault();
-        
-        const form = event.target;
-        const submitButton = form.querySelector('button[type="submit"]');
-        const toast = document.getElementById('success-toast');
-        const toastText = toast.querySelector('p');
-        const toastTitle = toast.querySelector('h5');
-        
-        // Disable button and change text to loading
-        submitButton.disabled = true;
-        const originalButtonHTML = submitButton.innerHTML;
-        submitButton.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">sync</span> Transmitting...`;
-
-        try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                // Success UI update
-                toastTitle.textContent = "Transmission Successful";
-                toastText.textContent = "Message sent to Logesh S successfully!";
-                toast.classList.remove('translate-y-20', 'opacity-0');
-                toast.classList.add('translate-y-0', 'opacity-100');
-                
-                // Clear form
-                form.reset();
-            } else {
-                const responseData = await response.json();
-                throw new Error(responseData.error || "Failed to deliver payload.");
-            }
-        } catch (error) {
-            console.error(error);
-            // Error UI update
-            toastTitle.textContent = "Transmission Interrupted";
-            toastText.textContent = "Could not send. Check connection or verify with Formsubmit.";
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-        } finally {
-            // Restore button
-            submitButton.disabled = false;
-            submitButton.innerHTML = originalButtonHTML;
-
-            // Hide toast after 5 seconds
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 5000);
-        }
-    }
-
-    // Initialize Typing
-    window.onload = () => {
-        type();
-    };
-</script>
-</body></html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
